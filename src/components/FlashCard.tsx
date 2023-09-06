@@ -55,13 +55,13 @@ const Flashcard = () => {
                 {showAnswer ? 'In Colombian Spanish this phrase means ...' : 'What does this phrase mean in English ?'}
             </div>
             <div className="flashcard-key text-center mb-12 mt-6 font-semibold text-2xl">
-              <div className='px-4 text-neutral-700 dark:text-neutral-100 lg:px-8'>
+              <div className='px-2 text-neutral-700 dark:text-gray-100 lg:px-8'>
                 {showAnswer ? `"${currentFlashcard.value}"` : `"${currentFlashcard.key}"` }
               </div>
             </div>
           </div>
           <div className="flashcard-side mx-auto">
-            <div className="flashcard-button w-1/3 mx-auto grid grid-flow-row grid-cols-1 gap-3 mt-12">
+            <div className="flashcard-button mx-auto grid grid-flow-row grid-cols-1 gap-3 mt-12">
               <button className="btn dark:bg-gray-800 bg-gray-200 hover:bg-gray-300 dark:hover:bg-gray-900 border-none text-gray-700 dark:text-neutral-100  whitespace-nowrap mb-6 tracking-wide leading-4" onClick={handleShowAnswerClick}>
                 {showAnswer ? 'Show Question' : 'Show Answer'}
               </button>
