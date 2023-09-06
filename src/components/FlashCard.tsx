@@ -1,61 +1,87 @@
 import React, { useState } from 'react';
 import { colombianPhrases } from '@/colombian-phrases';
+import Heading from './Heading';
 
 const Flashcard = () => {
-    function transformJsonToFlashcards(colombianPhrases: any) {
-        const flashcardData = [];
+  function transformJsonToFlashcards(colombianPhrases: any) {
+    const flashcardData = [];
 
-        for (const key in colombianPhrases) {
-            if (Object.hasOwnProperty.call(colombianPhrases, key)) {
-                const value = colombianPhrases[key];
-                flashcardData.push({ key, value });
-            }
-        }
-
-        return flashcardData;
+    for (const key in colombianPhrases) {
+      if (Object.hasOwnProperty.call(colombianPhrases, key)) {
+        const value = colombianPhrases[key];
+        flashcardData.push({ key, value });
+      }
     }
 
-    const flashcardData = transformJsonToFlashcards(colombianPhrases);
-    console.log(flashcardData);
+    return flashcardData;
+  }
 
-    const [showAnswer, setShowAnswer] = useState(false);
-    const [flashcardIndex, setFlashcardIndex] = useState(0);
+  const flashcardData = transformJsonToFlashcards(colombianPhrases);
 
-    const currentFlashcard = flashcardData[flashcardIndex];
+  const [showAnswer, setShowAnswer] = useState(false);
+  const [flashcardIndex, setFlashcardIndex] = useState(0);
 
+  const currentFlashcard = flashcardData[flashcardIndex];
 
-    const handleShowAnswerClick = () => {
-        setShowAnswer(true);
-    };
+  const handleShowAnswerClick = () => {
+    setShowAnswer(!showAnswer);
+  };
 
-    const handleShowQuestionClick = () => {
-        setShowAnswer(false);
-    };
+  const handleShowQuestionClick = () => {
+    setShowAnswer(false);
+  };
 
-    const handleNextCardClick = () => {
-        setShowAnswer(false);
-        // Choose a random flashcard for the next question
-        const newIndex = Math.floor(Math.random() * flashcardData.length);
-        setFlashcardIndex(newIndex);
-    };
+  const handleNextCardClick = () => {
+    if (flashcardIndex < flashcardData.length - 1) {
+      setFlashcardIndex(flashcardIndex + 1);
+      setShowAnswer(false);
+    }
+  };
 
-    return (
-        <div className="flashcard bg-white rounded-xl mx-4 mt-12 p-4 w-[90%] py-12 shadow-xl">
-            <div className="flashcard-content">
-                <div className="flashcard-side">
-                    <div className='text-2xl font-bold'>{showAnswer ? "Answer" : "Question"}</div>
-                    <div className="flashcard-key mt-6 text-gray-600 font-semibold text-lg">{showAnswer ? currentFlashcard.value : currentFlashcard.key}</div>
-                </div>
-                <div className="flashcard-side mx-auto">
-                    <div className="flashcard-button w-full flex flex-col items-evenly justify-center mt-12">
-                        <button className='btn bg-blue-500 mb-6 text-gray-100 hover:bg-blue-600' onClick={handleNextCardClick}>Next</button>
-                        <button className='btn bg-blue-500 mb-6 text-gray-100 hover:bg-blue-600' onClick={handleShowAnswerClick}>Show Answer</button>
-                        <button className='btn bg-blue-500 mb-6 text-gray-100 hover:bg-blue-600' onClick={handleShowQuestionClick}>Show Question</button>
-                    </div>
-                </div>
+  const handlePrevCardClick = () => {
+    if (flashcardIndex > 0) {
+      setFlashcardIndex(flashcardIndex - 1);
+      setShowAnswer(false);
+    }
+  };
+
+  return (
+    <div className="">
+      <Heading>Flash Cards</Heading>
+      <div className="flashcard bg-white rounded-xl mt-12 p-4 w-full py-12 shadow-xl">
+        <div className="flashcard-content">
+          <div className="flashcard-side">
+            <div className='text-xl text-center font-bold text-neutral-400'>
+                {showAnswer ? 'In Colombian Spanish this phrase means ...' : 'What does this phrase mean in English ?'}
             </div>
+            <div className="flashcard-key text-center mb-12 mt-6 font-semibold text-2xl">
+              <div className='text-neutral-700 px-4 lg:px-8'>
+                {showAnswer ? `"${currentFlashcard.value}"` : `"${currentFlashcard.key}"` }
+              </div>
+            </div>
+          </div>
+          <div className="flashcard-side mx-auto">
+            <div className="flashcard-button w-2/3 mx-auto grid grid-flow-row grid-cols-1 gap-3 mt-12">
+              <button className="btn btn-outline whitespace-nowrap mb-6 tracking-wide leading-4" onClick={handleShowAnswerClick}>
+                {showAnswer ? 'Show Question' : 'Show Answer'}
+              </button>
+            </div>
+            <div className="w-full grid grid-cols-2 grid-rows-1 mt-12 justify-center items-center gap-10">
+              <button className="btn bg-blue-500 shadow-lg py-4 mt-3 text-gray-100 tracking-wide text-lg leading-4 hover:bg-blue-600" onClick={handlePrevCardClick}>
+                Prev
+              </button>
+              <button className="btn bg-blue-500 shadow-lg py-4 mt-3 text-gray-100 tracking-wide text-lg leading-4 hover:bg-blue-600" onClick={handleNextCardClick}>
+                Next
+              </button>
+            </div>
+            <div className="flashcard-number text-center mt-6 text-neutral-400 font-semibold text-lg">
+              Flashcard: {flashcardIndex + 1} of {flashcardData.length}
+            </div>
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Flashcard;

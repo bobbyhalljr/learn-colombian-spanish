@@ -7,19 +7,18 @@ const Layout = ({ children }: any) => {
     return (
         <div>
             <Navbar />
-            <div className="drawer lg:drawer-open">
+            <div className="drawer bg-base-100 h-screen w-full lg:drawer-open">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content h-screen mx-auto max-w-3xl w-full flex flex-col items-center justify-center">
+                <div className="drawer-content bg-base-200 w-full flex p-4 flex-col">
                     {/* Page content here */}
-                    {children}
-                    {/* <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label> */}
-
+                    <div className='max-w-3xl w-full mx-auto'>{children}</div>
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 text-medium lg:text-lg font-semibold min-h-full bg-base-200 text-base-content">
+                    <ul className="menu p-4 w-80 text-base lg:text-lg font-semibold min-h-full bg-base-300 text-base-content">
                         {/* Sidebar content here */}
                         <li><Link href='/flash-cards'>Flash Cards</Link></li>
+                        <li><Link href='/quiz'>Quiz</Link></li>
                     </ul>
                 </div>
             </div>
