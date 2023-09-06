@@ -64,8 +64,8 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
             <Alert type="warning" text="You got it wrong! Try again! 🤔" />
           )}
 
-          <div className="question-section shadow-lg bg-white rounded-2xl p-4">
-            <div className="question-text text-center my-6 text-2xl font-semibold text-neutral-700">
+          <div className="question-section shadow-lg bg-white dark:bg-gray-700 rounded-2xl p-4">
+            <div className="question-text text-center my-6 text-2xl font-semibold dark:text-neutral-100 text-gray-600">
               {questions[currentQuestion].question}
             </div>
             <div className="option-container mt-4 grid grid-flow-row grid-cols-2 gap-1">
@@ -80,7 +80,7 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
                 </button>
               ))}
             </div>
-            <div className="text-center mt-6 text-neutral-400 font-semibold text-lg">
+            <div className="text-center mt-6 text-neutral-400 dark:text-neutral-300 font-semibold text-lg">
               Question {currentQuestion + 1} of {questions.length}
             </div>
           </div>

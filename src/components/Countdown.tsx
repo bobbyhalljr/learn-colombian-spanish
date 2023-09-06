@@ -50,7 +50,7 @@ const Countdown = () => {
     }, [isActive, minutes, seconds]);
 
     return (
-        <div className='flex items-center py-8 px-6 bg-neutral-300 rounded-2xl shadow-sm my-12 text-center auto-cols-max'>
+        <div className='flex items-center py-8 px-6 text-gray-700 dark:text-gray-100 bg-gray-300 dark:bg-gray-700 rounded-2xl shadow-sm my-12 text-center auto-cols-max'>
             {/* <h1 className='text-2xl font-bold text-nuetral-300'>Timer</h1> */}
             <div className="flex items-center">
                 <div className="flex mr-6">

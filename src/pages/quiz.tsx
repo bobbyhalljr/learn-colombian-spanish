@@ -6,7 +6,7 @@ import Quiz from "@/components/Quiz";
 const QuizPage = () => {
     return (
         <Layout>
-            <Heading>Quiz Page</Heading>
+            <Heading>Quiz</Heading>
             <Quiz questions={quizQuestions} />
         </Layout>
     )
