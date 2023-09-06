@@ -15,7 +15,7 @@ const Layout = ({ children }: any) => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 text-base lg:text-lg font-semibold min-h-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-100 dark:hover:text-gray-100">
+                    <ul className="menu p-4 w-80 text-base lg:text-lg font-semibold min-h-full bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-100 dark:hover:text-gray-100">
                         {/* Sidebar content here */}
                         <li><Link href='/' className="btn lg:hidden btn-ghost whitespace-nowrap normal-case text-base mb-6 lg:text-xl"><span className="text-3xl">🇨🇴</span>Learn Colombian Spanish</Link></li>
                         <li><Link href='/flash-cards'>Flash Cards</Link></li>
