@@ -9,7 +9,7 @@ const DarkModeToggle = () => {
     };
 
     return (
-        <div onClick={toggleDarkMode} className="flex flex-col items-center justify-center text-gray-800 dark:text-gray-200">
+        <div onClick={toggleDarkMode} className="flex flex-col px-4 items-center justify-center text-gray-800 dark:text-gray-200">
             {isDarkMode ? (
                 <svg
                     className="swap-off fill-current w-8 h-8"
@@ -37,7 +37,6 @@ const DarkModeToggle = () => {
                 <input type="checkbox" />
                 {/* sun icon */}
             </label>
-            <p className="text-xs">{isDarkMode ? "Dark Mode" : 'Light Mode'}</p>
         </div>
     );
 };
