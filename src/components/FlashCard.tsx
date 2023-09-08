@@ -4,7 +4,7 @@ import Heading from './Heading';
 
 const Flashcard = () => {
   function transformJsonToFlashcards(colombianPhrases: any) {
-    const flashcardData = [];
+    const flashcardData: any = [];
 
     for (const key in colombianPhrases) {
       if (Object.hasOwnProperty.call(colombianPhrases, key)) {

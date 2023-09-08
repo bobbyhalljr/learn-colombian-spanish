@@ -26,7 +26,7 @@ const PhraseTable: React.FC<PhraseTableProps> = ({ phrases }) => {
 
   return (
     <>
-    <div className="overflow-y-scroll overflow-x-auto lg:h-96 h-96 w-screen max-w-3xl break-words">
+    <div className="overflow-y-scroll overflow-x-auto lg:h-96 h-auto max-w-screen w-screen break-words">
     {/* <SearchBar onSearch={handleSearch} /> */}
       <table className="table table-zebra table-pin-rows text-lg">
         <thead>

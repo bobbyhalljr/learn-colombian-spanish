@@ -38,30 +38,30 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative mx-auto">
       <input
         type="text"
         placeholder="Search Colombian Phrases..."
-        className="w-64 p-2 rounded-md border"
+        className="w-72 py-3 px-3 rounded-md outline outline-2 focus:outline-blue-500 outline-gray-400"
         value={searchQuery}
         onChange={handleInputChange}
       />
       {suggestedPhrases.length > 0 && (
-        <div className="absolute mt-2 w-64 bg-opacity-90 bg-white backdrop-blur-md rounded-xl shadow-md">
+        <div className="absolute mt-2 w-full bg-opacity-90 bg-gray-100 backdrop-blur-md rounded-xl shadow-md">
           {suggestedPhrases.map((phrase, index) => (
-            <div key={index} className="p-2  rounded-lg hover:bg-gray-200 cursor-pointer">
+            <div key={index} className="p-2 border border-b-2 rounded-sm hover:bg-gray-200 cursor-pointer">
               <p className="font-semibold">{phrase.spanish}</p>
               <p>{phrase.english}</p>
             </div>
           ))}
         </div>
       )}
-      <button
+      {/* <button
         className="absolute right-0 bg-blue-500 text-white px-4 py-2 rounded-md"
         onClick={handleSearch}
       >
         Search
-      </button>
+      </button> */}
     </div>
   );
 };

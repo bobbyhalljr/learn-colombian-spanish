@@ -13,7 +13,7 @@ const Layout = ({ children }: any) => {
                 
                 <div className="drawer-content bg-white dark:bg-gray-900 mx-auto ">
                     {/* Page content here */}
-                    <div className='drawer max-w-3xl mx-auto w-full'>{children}</div>
+                    <div className='drawer max-w-3xl w-full mx-auto'>{children}</div>
                 </div>
 
                 <div className="drawer-side z-20">
@@ -24,6 +24,9 @@ const Layout = ({ children }: any) => {
                         <li className='rounded-lg dark:hover:bg-gray-400 transition duration-150 ease-out hover:ease-in'><Link href='/flash-cards'>Flash Cards</Link></li>
                         <li className='rounded-lg dark:hover:bg-gray-400 transition duration-150 ease-out hover:ease-in'><Link href='/quiz'>Quiz</Link></li>
                         <li className='rounded-lg dark:hover:bg-gray-400 transition duration-150 ease-out hover:ease-in'><Link href='/phrases'>Phrases</Link></li>
+                        {/* <li className='rounded-lg dark:hover:bg-gray-400 transition duration-150 ease-out hover:ease-in'><Link href='/chatbot'>Chatbot</Link></li> */}
+                        <li className='rounded-lg dark:hover:bg-gray-400 transition duration-150 ease-out hover:ease-in'><Link href='/search'>Search</Link></li>
+                        <li className='rounded-lg dark:hover:bg-gray-400 transition duration-150 ease-out hover:ease-in'><Link href='/translate'>Translate</Link></li>
                         {/* <li className='rounded-lg dark:hover:bg-gray-400 transition duration-150 ease-out hover:ease-in'><SearchBar onSearch={handleSearch} /></li> */}
                     </ul>
                 </div>
