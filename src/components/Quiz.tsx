@@ -48,7 +48,7 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
   };
 
   return (
-    <div className="quiz-container h-screen w-full max-w-3xl">
+    <div className="quiz-container px-4 w-screen max-w-3xl">
       {showScore ? (
         <div className="score-section text-2xl font-semibold dark:text-white text-gray-800">
           You scored {score} out of {questions.length}
@@ -57,6 +57,8 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
         <>
           <Countdown />
 
+          <h2 className='text-xl lg:text-2xl text-gray-600 dark:text-gray-100 my-12 mx-4 lg:mx-10'>Anwser the questions below and view your score at the end! you got this <span className='text-lg'>🙏🏽</span></h2>
+
           {showAlertCorrect && (
             <Alert type="success" text="You got it correct! Good job! 🎉" />
           )}
@@ -64,7 +66,8 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
             <Alert type="warning" text="You got it wrong! Try again! 🤔" />
           )}
 
-          <div className="question-section shadow-lg bg-white dark:bg-gray-700 rounded-2xl p-4">
+
+          <div className="question-section shadow-lg bg-gray-200 mb-24 dark:bg-gray-700 rounded-2xl p-4">
             <div className="question-text text-center my-6 text-2xl font-semibold dark:text-neutral-100 text-gray-600">
               {questions[currentQuestion].question}
             </div>
@@ -80,7 +83,7 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
                 </button>
               ))}
             </div>
-            <div className="text-center mt-6 text-neutral-400 dark:text-neutral-300 font-semibold text-lg">
+            <div className="text-center mt-6 text-neutral-500 dark:text-neutral-300 font-semibold text-lg">
               Question {currentQuestion + 1} of {questions.length}
             </div>
           </div>

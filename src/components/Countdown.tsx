@@ -50,34 +50,35 @@ const Countdown = () => {
     }, [isActive, minutes, seconds]);
 
     return (
-        <div className='flex items-center py-8 px-6 text-gray-700 dark:text-gray-100 bg-gray-300 dark:bg-gray-700 rounded-2xl shadow-sm my-12 text-center auto-cols-max'>
-            {/* <h1 className='text-2xl font-bold text-nuetral-300'>Timer</h1> */}
-            <div className="flex items-center">
-                <div className="flex mr-6">
-                    <span className="countdown mr-2 font-mono text-5xl">{minutes}</span> min
+        <>
+        <h2 className='text-xl lg:text-2xl text-gray-600 dark:text-gray-200 mx-4 lg:mx-10'>Timer</h2>
+        <div className='flex flex-col md:flex-row items-center md:justify-center py-8 text-gray-700 dark:text-gray-100 bg-neutral-200 dark:bg-gray-700 rounded-2xl shadow-sm mb-12 mt-2 text-center auto-cols-max'>
+            <div className="flex items-center justify-center mb-6 mx-2 mr-2 ml-6">
+                <div className="flex mr-2">
+                    <span className="countdown mr-2 font-mono text-4xl lg:text-5xl">{minutes}</span> min
                 </div>
                 <div className="flex">
-                    <span className="countdown mr-2 font-mono text-5xl">{seconds}</span> sec
+                    <span className="countdown mr-2 font-mono text-4xl lg:text-5xl">{seconds}</span> sec
                 </div>
             </div>
 
-            <div className="flex items-center w-full justify-end lg:ml-8 ml-4 space-x-4 ">
+            <div className="flex items-center w-full justify-center lg:ml-8">
                 <button
-                    className={`bg-green-500 text-white rounded-md lg:w-1/3 px-4 py-2 ${isActive ? 'hidden' : ''
+                    className={`bg-green-600 hover:bg-green-700 text-white rounded-md lg:w-1/3 mr-2 px-4 py-2 ${isActive ? 'hidden' : ''
                         }`}
                     onClick={toggleTimer}
                 >
                     Start
                 </button>
                 <button
-                    className={`bg-red-500 text-white rounded-md lg:w-1/3 px-4 py-2 ${!isActive ? 'hidden' : ''
+                    className={`bg-red-500 hover:bg-red-600 text-white rounded-md lg:w-1/3 mr-2 px-4 py-2 ${!isActive ? 'hidden' : ''
                         }`}
                     onClick={toggleTimer}
                 >
                     Pause
                 </button>
                 <button
-                    className="bg-neutral text-neutral-content rounded-md lg:w-1/3 px-4 py-2"
+                    className="bg-neutral-800 hover:bg-neutral-900 text-neutral-content rounded-md lg:w-1/3 px-4 py-2"
                     onClick={resetTimer}
                 >
                     Reset
@@ -85,6 +86,7 @@ const Countdown = () => {
             </div>
 
         </div>
+        </>
     );
 };
 

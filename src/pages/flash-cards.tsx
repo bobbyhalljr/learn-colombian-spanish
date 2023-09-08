@@ -1,16 +1,14 @@
-import React, { useState } from 'react'
-import { colombianPhrases } from '@/colombian-phrases'
+import React from 'react'
 import Layout from '@/components/Layout'
-import FlashcardApp from '@/components/FlashCard'
 import Flashcard from '@/components/FlashCard'
+import Heading from '@/components/Heading'
 
 export default function Home() {
 
   return (
-    <main className=''>
       <Layout>
+        <Heading>Flash Cards</Heading>
         <Flashcard />
       </Layout>
-    </main>
   )
 }
